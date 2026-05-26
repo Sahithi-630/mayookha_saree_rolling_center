@@ -870,6 +870,29 @@ button, input, textarea, select {
     padding: 20px;
 }
 
+.story-title {
+    font-size: 2.2rem;
+    font-family: var(--font-headings);
+    margin-bottom: 16px;
+    color: var(--color-rose);
+    line-height: 1.25;
+}
+
+.story-lead {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--color-gold-dark);
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.story-paragraph {
+    color: var(--color-charcoal);
+    opacity: 0.85;
+    line-height: 1.65;
+    margin-bottom: 16px;
+}
+
 @media (max-width: 992px) {
     .about-name-story-row {
         margin-top: 50px;
@@ -877,6 +900,31 @@ button, input, textarea, select {
     }
     .story-image-wrapper {
         margin-bottom: 30px;
+    }
+    .story-title {
+        font-size: 1.85rem;
+        margin-bottom: 12px;
+    }
+    .story-lead {
+        font-size: 1.05rem;
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-name-story-row {
+        margin-top: 40px;
+        padding-top: 30px;
+    }
+    .story-text-content {
+        padding: 10px 0;
+        text-align: center;
+    }
+    .story-image-wrapper::before {
+        bottom: -10px;
+        left: -10px;
+        width: 80px;
+        height: 80px;
     }
 }
 
