@@ -1,5 +1,5 @@
 /**
- * Mayookha Saree Rolling Center & Boutique - Interactive Functionality
+ * Mayookha Boutique, Saree Rolling and Dry Cleaners - Interactive Functionality
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -135,6 +135,30 @@ const SERVICES_DB = {
         duration: "1 - 2 Days",
         safety: "Long-lasting Pleats & Crease Care",
         desc: "Save hours of draping time! We professionally fold and pre-pleat the waist and shoulder pleats based on your height and measurements. The saree is then carefully ironed and packed in a box, allowing you to wear it perfectly in under 5 minutes on your big day. Great for brides, wedding guests, and festivals."
+    },
+    stainremoval: {
+        title: "Gentle Stain Removal",
+        tag: "Saree Care & Cleaning",
+        image: "assets/stain_removal.png",
+        duration: "2 - 3 Days",
+        safety: "Fabric-Safe Organic Agents",
+        desc: "Expert stain treatment tailored for delicate silks, organzas, and chiffons. We use safe, eco-friendly organic agents to target and dissolve stubborn grease, food, or oil stains by hand, ensuring the fabric fiber and original dye remain completely unharmed."
+    },
+    onegramgold: {
+        title: "One Gram Gold Jewellery",
+        tag: "Stitching & Designs",
+        image: "assets/one_gram_gold.png",
+        duration: "3 - 5 Days",
+        safety: "High-Grade Gold Plating",
+        desc: "Exquisite traditional South Indian jewellery designs featuring a premium 1 gram gold plating. Our collection showcases gorgeous necklaces, harams, and jhumkas decorated with emeralds, rubies, and pearls, giving you a royal look for any grand celebration."
+    },
+    panchaloha: {
+        title: "Panchaloha Jewellery",
+        tag: "Stitching & Designs",
+        image: "assets/panchaloha_jewellery.png",
+        duration: "4 - 7 Days",
+        safety: "Pure Five-Metal Alloy",
+        desc: "Intricately handcrafted traditional temple jewellery made from the sacred Panchaloha—a pure five-metal alloy (gold, silver, copper, brass, iron). Highly durable, skin-friendly, and glowing with an auspicious traditional gold-like sheen, our rings, bangles, and pendants add a timeless spiritual elegance to your wedding or festival style."
     }
 };
 
@@ -218,12 +242,12 @@ function handleFormSubmission(event) {
     }
     
     // Construct WhatsApp message template with beautiful styling
-    const textTemplate = `🌸 *MAYOOOKHA BOUTIQUE - NEW QUOTE REQUEST* 🌸\n\n` + 
+    const textTemplate = `🌸 *MAYOOKHA BOUTIQUE, SAREE ROLLING & DRY CLEANERS - NEW BOOKING & ENQUIRY* 🌸\n\n` + 
                          `👤 *Client Name:* ${name}\n` + 
                          `📞 *Phone:* ${phone}\n` + 
                          `✨ *Requested Service:* ${serviceLabel}\n` + 
                          `📝 *Details:* ${message ? message : 'N/A'}\n\n` + 
-                         `--- Prefilled from Mayookha Web Portfolio ---`;
+                         `--- Prefilled from Mayookha Boutique, Saree Rolling and Dry Cleaners ---`;
                          
     const whatsappUrl = `https://wa.me/916301884617?text=${encodeURIComponent(textTemplate)}`;
     
@@ -294,4 +318,27 @@ function initSectionHighlighter() {
             }
         });
     });
+}
+
+// --------------------------------------------------------------------------
+// 9. MEET OUR TEAM SECTION EXPANDER
+// --------------------------------------------------------------------------
+function toggleTeamSection() {
+    const container = document.getElementById('team-expand-container');
+    const btn = document.getElementById('toggle-team-btn');
+    
+    if (container.classList.contains('active')) {
+        container.style.maxHeight = '0px';
+        container.classList.remove('active');
+        btn.innerHTML = 'Meet Our Team &darr;';
+    } else {
+        container.classList.add('active');
+        container.style.maxHeight = container.scrollHeight + 'px';
+        btn.innerHTML = 'Close Team View &uarr;';
+        
+        // Smoothly scroll down slightly to focus on the expanded content
+        setTimeout(() => {
+            container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 150);
+    }
 }

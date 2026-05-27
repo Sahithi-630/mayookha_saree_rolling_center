@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MAYOOOKHA BOUTIQUE & SAREE ROLLING CENTER - DESIGN SYSTEM & CUSTOM CSS
+   MAYOOKHA BOUTIQUE, SAREE ROLLING & DRY CLEANERS - DESIGN SYSTEM & CUSTOM CSS
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -932,6 +932,225 @@ button, input, textarea, select {
     }
 }
 
+/* About Founder Story Row */
+.about-founder-story-row {
+    margin-top: 80px;
+    position: relative;
+    padding-top: 60px;
+}
+
+.founder-divider {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.3), transparent);
+}
+
+.founder-story-card {
+    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-cream) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: var(--border-radius-lg);
+    padding: 48px 56px;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.founder-story-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--color-rose) 0%, var(--color-gold) 100%);
+}
+
+.founder-story-header {
+    margin-bottom: 28px;
+}
+
+.founder-story-title {
+    font-size: 2.2rem;
+    font-family: var(--font-headings);
+    color: var(--color-rose);
+    margin-top: 8px;
+    line-height: 1.25;
+}
+
+.founder-story-lead {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-gold-dark);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.founder-story-paragraph {
+    color: var(--color-charcoal);
+    opacity: 0.88;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.founder-story-paragraph:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .about-founder-story-row {
+        margin-top: 50px;
+        padding-top: 40px;
+    }
+    .founder-story-card {
+        padding: 32px 24px;
+    }
+    .founder-story-title {
+        font-size: 1.75rem;
+    }
+    .founder-story-lead {
+        font-size: 1.1rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   6b. MEET OUR TEAM SECTION
+   -------------------------------------------------------------------------- */
+.team-section {
+    background-color: var(--color-cream);
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    padding: 80px 0;
+}
+
+.team-cta-box {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.team-cta-desc {
+    font-size: 1.1rem;
+    color: var(--color-charcoal);
+    opacity: 0.85;
+    margin: 16px auto 32px;
+    line-height: 1.6;
+}
+
+.team-expand-container {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease-out;
+    margin-top: 0;
+}
+
+.team-expand-container.active {
+    max-height: 2500px;
+    opacity: 1;
+    margin-top: 60px;
+}
+
+.team-grid {
+    gap: 32px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.team-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    overflow: hidden;
+    transition: var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-rose);
+}
+
+.team-img-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-bottom: 2px solid var(--color-gold-light);
+    background-color: var(--color-grey-light);
+}
+
+.team-member-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-slow);
+}
+
+.team-card:hover .team-member-img {
+    transform: scale(1.06);
+}
+
+.team-card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.team-member-role {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--color-gold-dark);
+    margin-bottom: 6px;
+}
+
+.team-member-name {
+    font-size: 1.4rem;
+    font-family: var(--font-headings);
+    color: var(--color-rose);
+    margin-bottom: 12px;
+}
+
+.team-member-bio {
+    font-size: 0.92rem;
+    color: var(--color-charcoal);
+    opacity: 0.85;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 992px) {
+    .team-section {
+        padding: 60px 0;
+    }
+    .grid-3 {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    .team-expand-container.active {
+        margin-top: 40px;
+    }
+    .team-card {
+        max-width: 450px;
+        margin: 0 auto;
+    }
+}
+
 /* --------------------------------------------------------------------------
    7. SERVICES GRID & TABS
    -------------------------------------------------------------------------- */
@@ -1781,7 +2000,7 @@ button, input, textarea, select {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.5fr repeat(3, 1fr);
+    grid-template-columns: 1.4fr repeat(4, 1fr);
     gap: 40px;
     margin-bottom: 60px;
 }
@@ -1837,6 +2056,7 @@ button, input, textarea, select {
 
 .footer-links-column h3,
 .footer-services-column h3,
+.footer-jewellery-column h3,
 .footer-care-column h3 {
     color: var(--color-white);
     font-size: 1.15rem;
@@ -1847,6 +2067,7 @@ button, input, textarea, select {
 
 .footer-links-column h3::after,
 .footer-services-column h3::after,
+.footer-jewellery-column h3::after,
 .footer-care-column h3::after {
     content: '';
     display: block;
